@@ -1,5 +1,71 @@
-% ISE numbering
-\labN{0}
+% Packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+% \usepackage{fancyvrb}
+\usepackage{multicol}
+% \usepackage{caption}
+\usepackage{code-listings}
+\usepackage{wasysym}
+\usepackage[yyyymmdd]{datetime}
+\usepackage[misc]{ifsym}
+
+\renewcommand{\dateseparator}{}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% \definecolor{links}{HTML}{0000FF}
+% \hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\newcommand{\disi}{Dipartimento di Informatica -- Scienza e Ingegneria}
+\newcommand{\disiShort}{DISI}
+\newcommand{\unibo}{Alma Mater Studiorum---Università di Bologna}
+\newcommand{\uniboShort}{UniBO}
+
+\newcommand{\version}[1]{\def\theversion{#1}}
+\newcommand{\school}[1]{\def\theschool{#1}}
+\newcommand{\schoolShort}[1]{\def\theschoolShort{#1}}
+\newcommand{\programme}[1]{\def\theprogramme{#1}}
+\newcommand{\programmeShort}[1]{\def\theprogrammeShort{#1}}
+\newcommand{\contestsector}[1]{\def\thecontestsector{#1}}
+\newcommand{\scientificsector}[1]{\def\thescientificsector{#1}}
+\newcommand{\candidate}[1]{\def\thecandidate{#1}}
+\newcommand{\candidateShort}[1]{\def\thecand{#1}}
+\newcommand{\candidateEmail}[1]{\def\thecandidateEmail{#1}}
+\newcommand{\coordinator}[1]{\def\thecoordinator{#1}}
+\newcommand{\coordinatorShort}[1]{\def\thecoord{#1}}
+\newcommand{\coordinatorEmail}[1]{\def\thecoordinatorEmail{#1}}
+\newcommand{\supervisor}[1]{\def\thesupervisor{#1}}
+\newcommand{\supervisorShort}[1]{\def\thesuperv{#1}}
+\newcommand{\supervisorEmail}[1]{\def\thesupervisorEmail{#1}}
+\newcommand{\cycle}[1]{\def\thecycle{#1}}
+\newcommand{\examdate}[1]{\def\theexamdate{#1}}
+\newcommand{\examdateShort}[1]{\def\theexamdateShort{#1}}
+
+\let\oldtitlepage\titlepage
+\renewcommand{\titlepage}{
+    \author[\sspeaker{\thecand}]{\color{black}
+        \centering
+        \begin{tabular}{rcl}
+            \textbf{Supervisor:} & \alert{\textbf{Candidate:}} & \textbf{Coordinator:}
+            \\
+            \thesupervisor~\href{mailto:\thesupervisorEmail}{\textsuperscript{\Letter}}
+            &  
+            \alert{\thecandidate~\href{mailto:\thecandidateEmail}{\textsuperscript{\Letter}}} 
+            & 
+            \thecoordinator~\href{mailto:\thecoordinatorEmail}{\textsuperscript{\Letter}}
+        \end{tabular}
+    }
+    \institute[\theprogrammeShort{} \thecycle{} @ \theschoolShort]{\theprogramme{}, Cycle \thecycle \\ \theschool}
+    \date[\theexamdateShort{} (v.\ \theversion)]{Defense date: \theexamdate\\\tiny Slides version: \theversion}
+    \oldtitlepage
+}
+
+\newcommand{\hint}[1]{\hfill{\scriptsize \alert{!} {\color{gray}#1}}}
+\newcommand{\dhint}[1]{{\scriptsize{\color{gray}\dotfill #1}}}
+\newcommand{\fnhint}[1]{{\footnote{\scriptsize{\color{gray}#1}}}}
+\newcommand{\columsHH}[2]{\begin{columns}\begin{column}{.49\linewidth}#1\end{column}\hfill\begin{column}{.49\linewidth}#2\end{column}\end{columns}}
 
 \AtBeginSection[]
 {

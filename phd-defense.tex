@@ -9,26 +9,50 @@
 \documentclass[presentation]{beamer}\mode<presentation>{\usetheme{AMSBolognaFC}}
 %\documentclass[handout]{beamer}\mode<handout>{\usetheme{AMSBolognaFC}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{ise-lab-common}
 \usepackage{phd-defense}
 % version
 \newcommand{\versionmajor}{0}
 \newcommand{\versionminor}{1}
 \newcommand{\versionpatch}{1}
-\newcommand{\version}{\versionmajor.\versionminor.\versionpatch}
+\version{\versionmajor.\versionminor.\versionpatch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[\currentLab{} -- Short Title]{
-	Long Title
-}
+
+\school{\unibo}
 %
-\subtitle{\courseName{} / Module \moduleN{} (\courseAcronym)}
+\schoolShort{\uniboShort}
 %
-\author[\sspeaker{\gcShort}]{\speaker{\gcFull} \\ \gcEmail}
+\programme{PhD Programme in `Data Science and Computation'}
 %
-\institute[\disiShort, \uniboShort]{\disi{} (\disiShort)\\\unibo}
+\programmeShort{DS\&C}
 %
-\date[A.Y. \academicYear{} (v.\ \version)]{Academic Year \academicYear{}\\(version \version)}
+\title[Role of CL in DS]{On the role of Computational Logic in Data Science}
 %
+\subtitle{Representing, Learning, Reasoning, and Explaining Knowledge}
+%
+\candidate{Giovanni Ciatto}
+\candidateShort{G. Ciatto}
+\candidateEmail{giovanni.ciatto@unibo.it}
+%
+\supervisor{Prof. Andrea Omicini}
+\supervisorShort{A. Omicini}
+\supervisorEmail{andrea.omicini@unibo.it}
+%
+\coordinator{Prof. Andrea Cavalli}
+\coordinatorShort{A. Cavalli}
+\coordinatorEmail{andrea.cavalli@unibo.it}
+%
+\date{\today}
+%
+\contestsector{09/H1 -- Sistemi di Elaborazione delle Informazioni}
+%
+\scientificsector{ING-INF/05 -- Sistemi di Elaborazione delle Informazioni}
+%
+\cycle{XXXIII}
+%
+\examdate{June 16, 2022}
+%
+\examdateShort{2022/06/16}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -51,13 +75,13 @@
 
 \begin{frame}{Lecture Goals}
 	\begin{itemize}
-		\item 
+		\item
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Motivations}
 	\begin{itemize}
-		\item 
+		\item
 	\end{itemize}
 \end{frame}
 
@@ -67,7 +91,7 @@
 
 \begin{frame}{Basics}
 	\begin{itemize}
-		\item 
+		\item
 	\end{itemize}
 \end{frame}
 
@@ -75,9 +99,7 @@
 \section{Demos}
 %===============================================================================
 
-\startDemo
-
-\begin{frame}{\currentDemo{} -- First Demo}
+\begin{frame}{First Demo}
 	\begin{block}{Goal}
 		Goal here
 	\end{block}
@@ -91,9 +113,7 @@
 \section{Exercises}
 %===============================================================================
 
-\startExercise
-
-\begin{frame}{\currentExercise{} -- First Exercise}
+\begin{frame}{First Exercise}
 	\begin{block}{Goal}
 		Goal here
 	\end{block}
@@ -123,6 +143,7 @@
 %	\tiny
 	\scriptsize
 %	\footnotesize
+	\nocite{*}
 	\bibliographystyle{apalike-AMS}
 	\bibliography{phd-defense}
 \end{frame}
