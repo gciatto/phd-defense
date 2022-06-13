@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ISE Lab -- Topic
+% Giovanni Ciatto
+% Alma Mater Studiorum - Università di Bologna
+% mailto:giovanni.ciatto@unibo.it
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[handout]{beamer}\mode<handout>{\usetheme{default}}
+%
+\documentclass[presentation]{beamer}\mode<presentation>{\usetheme{AMSBolognaFC}}
+%\documentclass[handout]{beamer}\mode<handout>{\usetheme{AMSBolognaFC}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{ise-lab-common}
+\usepackage{ise-lab-template}
+% version
+\newcommand{\versionmajor}{0}
+\newcommand{\versionminor}{1}
+\newcommand{\versionpatch}{1}
+\newcommand{\version}{\versionmajor.\versionminor.\versionpatch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[\currentLab{} -- Short Title]{
+	Long Title
+}
+%
+\subtitle{\courseName{} / Module \moduleN{} (\courseAcronym)}
+%
+\author[\sspeaker{\gcShort}]{\speaker{\gcFull} \\ \gcEmail}
+%
+\institute[\disiShort, \uniboShort]{\disi{} (\disiShort)\\\unibo}
+%
+\date[A.Y. \academicYear{} (v.\ \version)]{Academic Year \academicYear{}\\(version \version)}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%/////////
+\frame{\titlepage}
+%/////////
+
+%%===============================================================================
+\section*{Outline}
+%%===============================================================================
+%
+%%/////////
+\frame[c]{\tableofcontents[hideallsubsections]}
+%%/////////
+
+%===============================================================================
+\section{Premises}
+%===============================================================================
+
+\begin{frame}{Lecture Goals}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Motivations}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+%===============================================================================
+\section{Main Topic}
+%===============================================================================
+
+\begin{frame}{Basics}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+\end{frame}
+
+%===============================================================================
+\section{Demos}
+%===============================================================================
+
+\startDemo
+
+\begin{frame}{\currentDemo{} -- First Demo}
+	\begin{block}{Goal}
+		Goal here
+	\end{block}
+	%
+	\begin{itemize}
+		\item further info here
+	\end{itemize}
+\end{frame}
+
+%===============================================================================
+\section{Exercises}
+%===============================================================================
+
+\startExercise
+
+\begin{frame}{\currentExercise{} -- First Exercise}
+	\begin{block}{Goal}
+		Goal here
+	\end{block}
+	%
+	\begin{itemize}
+		\item further info here
+	\end{itemize}
+\end{frame}
+
+%===============================================================================
+\section*{}
+%===============================================================================
+
+%/////////
+\frame{\titlepage}
+%/////////
+
+%===============================================================================
+\section*{\refname}
+%===============================================================================
+
+%%%%
+\setbeamertemplate{page number in head/foot}{}
+%/////////
+\begin{frame}[c,noframenumbering]{\refname}
+%\begin{frame}[t,allowframebreaks,noframenumbering]{\refname}
+%	\tiny
+	\scriptsize
+%	\footnotesize
+	\bibliographystyle{apalike-AMS}
+	\bibliography{ise-lab-template}
+\end{frame}
+%/////////
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

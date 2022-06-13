@@ -1,0 +1,8 @@
+[submodule ".style"]
+	path = .style
+	url = https://github.com/andreaomicini/beamer-AMSBolognaFC.git
+	branch = main
+[submodule ".ise-lab"]
+	path = .ise-lab
+	url = git@github.com:pikalab-unibo/ise-lab-common.git
+	branch = main
