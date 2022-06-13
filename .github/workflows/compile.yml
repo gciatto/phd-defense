@@ -5,7 +5,7 @@ on:
       - main
       - master
 env:
-  LATEX_ROOT: ise-lab-template
+  LATEX_ROOT: phd-defense
 jobs:
   compile:
     runs-on: ubuntu-latest
