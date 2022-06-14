@@ -1,0 +1,31 @@
+@startuml
+hide footbox
+
+actor User
+control "Probabilistic\nSolver" as Solver
+control "Internal\nSolver" as Prolog
+collections "Solutions\nStream" as Stream
+
+activate User
+User -> Solver: solve(Goal)
+activate Solver
+
+Solver -> Prolog: prob_query(P, Goal)
+activate Prolog
+Prolog --> Solver: //all solutions//
+deactivate Prolog
+
+
+create Stream
+Solver -> Stream: //create//
+
+Solver --> User: //reference to stream//
+deactivate Solver
+
+loop //stream has solution//
+User -> Stream: next()
+activate Stream
+Stream -> User: //Solution:// Goal = g //with probability// P = p
+deactivate Stream
+end
+@enduml

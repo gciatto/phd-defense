@@ -1,0 +1,42 @@
+% \begin{adjustbox}{width=\textwidth,center}
+\begin{algorithmic}\footnotesize
+    \Function{Metagol}{$B$, $E^+$, $E^-, C$}
+
+        \State $L :=  \{ \text{all heads of all clauses in} ~ B \}$
+
+        \For{$d := 1, 2, \ldots, D_{max}$}\label{for:dept} \Comment{iteratively deepening depth-first search}
+            \State $H := \{\}$ 
+            \For{$e \in E^+$}
+                \If{$(H, B) \models e$}
+                    \textbf{continue}
+                \EndIf
+                \While{$|H| \leq d$}
+                    \State $m$ $:=$ any metarule in $C$ s.t. $\mathit{mgu}(e, \mathit{head}(m)) = \theta$ 
+                    \Comment{non-det.}
+                    \If{$\theta \neq \Box$} 
+                        \textbf{continue}
+                        \Comment{if no MGU exists}
+                    \EndIf
+                    \State $m := m / \theta$
+                    \For{$l \in \mathit{body}(m)$}
+                        \If{$l$ has no meta-variable or is ground} 
+                            \textbf{continue}
+                        \EndIf
+                        \State $p$ $:=$ any predicate in $L$ s.t. $\mathit{mgu}(l, p) = \sigma$ 
+                        \Comment{non-det.}
+                        \If{$\sigma \neq \Box$} 
+                            \textbf{continue} for on line \ref{for:dept} 
+                            \Comment{if no MGU exists}
+                        \EndIf
+                        \State $m := m / \sigma$
+                    \EndFor
+                    \State $H := H \cup \{ \Call{Generalize}{$m$} \}$ 
+                \EndWhile
+            \EndFor
+            \If{$(\not\exists e \in E^- : (H, B) \models e) \wedge (\forall e \in E^+ : (H, B) \models e)$}
+                \State \Return $H$
+            \EndIf
+        \EndFor
+    \EndFunction
+\end{algorithmic}
+% \end{adjustbox}

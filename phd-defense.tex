@@ -12,7 +12,7 @@
 \usepackage{phd-defense}
 % version
 \newcommand{\versionmajor}{0}
-\newcommand{\versionminor}{3}
+\newcommand{\versionminor}{4}
 \newcommand{\versionpatch}{0}
 \version{\versionmajor.\versionminor.\versionpatch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -681,6 +681,187 @@
             \item CLI / GUI / testing facilities
         \end{itemize}
     \end{multicols}
+\end{frame}
+
+\subsubsection{\twopkt{} for Knowledge Representation}
+
+\begin{frame}{Knowledge Representation and Manipulation in \twopkt}
+    \begin{block}{Module \module{core}}
+        \begin{multicols}{2}
+            \begin{itemize}
+                \item logic terms and Horn clauses
+                \item logic substitutions
+            \end{itemize}
+        \end{multicols}
+    \end{block}
+
+    \begin{block}{Module \module{unify}}
+        \begin{itemize}
+            \item unification and MGU\ccite{MartelliMontanari1982}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Module \module{theory}}
+        \begin{itemize}
+            \item logic theories / knowledge bases
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Module \module{oop-lib}}
+        \begin{itemize}
+            \item interoperability with OOP programming languages
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\subsubsection{\twopkt{} for Machine Learning}
+
+\begin{frame}{Inductive Logic Programming Example}
+    \prologimport{listings/ilp-example.pl}
+    %
+    \begin{exampleblock}{Here the goal is \textbf{inducing} the theory}
+        \begin{itemize}
+            \item \prolog{grand_parent(X, Y) :- parent(X, Z), parent(Z, Y).}
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Inductive Logic Programming Support in \twopkt{}}
+    \begin{itemize}
+        \item Sketched in recent Master theses\ccite{Speciale2021,Nannini2021}
+        
+        \vfill
+
+        \item Focus on the meta-interpretative learning approach\ccite{MuggletonLT15}
+        %
+        \begin{itemize}
+            \item new ILP algorithm inspired by Metagol
+        \end{itemize}
+
+        \vfill
+
+        \item Promising results w.r.t. learning recursive logic programs
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\twopkt{}'s interoperability with ML\ccite{CiattoCC2022}}
+    \begin{columns}
+        \begin{column}{.35\linewidth}
+            \includegraphics[width=\linewidth]{figures/layers.pdf}
+        \end{column}
+        \begin{column}{.65\linewidth}
+            \begin{itemize}
+                \item library of LP predicates
+                \item for training/using ML models
+                \item supports hybrid systems
+            \end{itemize}
+        \end{column}
+    \end{columns}
+    %
+    \prologimport{listings/hybrid-predictor.pl}
+\end{frame}
+
+\subsubsection{\twopkt{} for Inference}
+
+\begin{frame}{\twopkt{}'s General API for Logic Resolution\ccite{2pkt-jelia2021}}
+
+    \begin{columns}
+        \begin{column}{.49\linewidth}
+            \includegraphics[width=\linewidth]{figures/primitive-usage.pdf}
+        \end{column}
+        \begin{column}{.49\linewidth}
+            \includegraphics[width=\linewidth]{figures/generator.pdf}
+        \end{column}
+    \end{columns}
+
+    \vfill
+
+    \begin{itemize}
+        \item Logic solvers as oracles queried by users
+        
+        \vfill
+
+        \item Generators as gateways towards the external world
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\twopkt{}'s support for Prolog-like Resolution\ccite{2pkt-jelia2021}}
+    \begin{itemize}
+        \item State-Machine for Prolog, proposed in \ccite{tuprolog-sac08}
+        %
+        \begin{itemize}
+            \item extended to support \alert{generators}
+        \end{itemize}
+    \end{itemize}
+
+    \begin{center}
+        \includegraphics[width=.8\linewidth]{figures/2p-fsa-dataflow.pdf}
+    \end{center}
+    %
+    \hfill\hint{formalization attempt here: \url{https://github.com/tuProlog/2pkt-state-machine}}
+\end{frame}
+
+\begin{frame}{\twopkt{}'s support for Probabilistic LP\ccite{dcc-aixia-2021-plp}}
+    \begin{columns}
+        \begin{column}{.49\linewidth}
+            \fbox{\includegraphics[width=\linewidth]{figures/design-problog-theory-transformation.pdf}}
+        \end{column}
+        \begin{column}{.49\linewidth}
+            \includegraphics[width=\linewidth]{figures/general-api.pdf}
+        \end{column}
+    \end{columns}
+
+    \vfill
+
+    %
+    \begin{itemize}\small
+        \item Probabilistic solvers are queried with a \alert{goal}
+        \vfill
+        \item They respond with \alert{variables assignments} and their \alert{probabilities}
+        \vfill
+        \item An \alert{internal solver} may be exploited behind the scenes to compute solutions
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\twopkt{}'s support for Concurrent LP}
+    \begin{itemize}
+
+        \item Sketched in recent Master theses\ccite{Giordano2021}
+
+        \vfill
+
+        \item Support for OR-concurrent LP
+        
+        \vfill
+
+        \item Based on modern concurrent programming facilities 
+        %
+        \begin{itemize}
+            \item[eg] coroutines and fork-join pools
+        \end{itemize}
+
+        \vfill
+
+        \item Immutable \& copy-on-edit design to avoid synchronization overhead
+    \end{itemize}
+\end{frame}
+
+\subsubsection{\twopkt{} for Explanations}
+
+\begin{frame}{Platform for SKE based on \twopkt{}\ccite{psyke-woa2021}}
+    \begin{center}
+        \includegraphics[width=.8\linewidth]{figures/Psyke.pdf}
+    \end{center}
+    %
+    \vfill
+    %
+    \begin{itemize}
+        \item general API for extracting symbolic knowledge out of ML models
+        \vfill
+        \item in the form of Prolog rules
+        \vfill
+        \item via several extraction algorithms
+    \end{itemize}
 \end{frame}
 
 %===============================================================================

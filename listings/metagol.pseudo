@@ -1,0 +1,24 @@
+L := { all literals of all heads of all clauses in B }
+C := { set of metarules }
+
+for d in 1, 2, ... :
+    H := {}
+    for e in E+: 
+        if (H, B) ⊨ e: 
+            continue
+        while |H| <= d:
+            m := metarule from C s.t. mgu(e, head(m)) = A        # non-det
+            if there is no A:
+                fail
+            m := m/A
+            for l in body(m):
+                if l has no meta-variable:
+                    continue
+                p := predicate from L s.t. mgu(l, p) = B        # non-det
+                if there is no B:
+                    continue @ for on line 4
+                m := m/B
+            m := generalize(m)
+            H := H u { m }
+    if (exists no e in E- s.t. (H, B) ⊨ e) && (for all e in E+ (H, B) ⊨ e):
+        return H

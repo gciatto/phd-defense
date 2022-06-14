@@ -64,6 +64,7 @@
 \newcommand{\dhint}[1]{{\scriptsize{\color{gray}\dotfill #1}}}
 \newcommand{\fnhint}[1]{{\footnote{\scriptsize{\color{gray}#1}}}}
 \newcommand{\columsHH}[2]{\begin{columns}\begin{column}{.49\linewidth}#1\end{column}\hfill\begin{column}{.49\linewidth}#2\end{column}\end{columns}}
+\newcommand{\module}[1]{\texttt{\textit{:#1}}}
 
 \newcommand{\functor}[1]{\mathtt{#1}}
 \newcommand{\variable}[1]{\mathit{#1}}
@@ -102,7 +103,16 @@
 {
     \begin{frame}[c,noframenumbering]\frametitle{Next in Line\ldots}
         %    \begin{multicols}{2}
-            \tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/hide, subsubsectionstyle=hide/hide]
+            \tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/shaded, subsubsectionstyle=hide/hide]
+            %    \end{multicols}
+    \end{frame}
+}
+
+\AtBeginSubsubsection[]
+{
+    \begin{frame}[c,noframenumbering]\frametitle{Next in Line\ldots}
+        %    \begin{multicols}{2}
+            \tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/hide, subsubsectionstyle=show/shaded]
             %    \end{multicols}
     \end{frame}
 }

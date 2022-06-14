@@ -1,0 +1,17 @@
+@startuml
+hide footbox
+
+actor User
+
+User -> Solver: solve(//Goal//)
+
+Solver -> Generator: **Request**(//Goal//)
+
+group Lazily enumerated, e.g. via //backtracking//
+
+Solver <-- Generator: //Sequence//<**Response**>
+
+User <-- Solver: //Sequence//<**Solution**>
+
+end
+@enduml
