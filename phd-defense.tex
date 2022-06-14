@@ -12,8 +12,8 @@
 \usepackage{phd-defense}
 % version
 \newcommand{\versionmajor}{0}
-\newcommand{\versionminor}{1}
-\newcommand{\versionpatch}{1}
+\newcommand{\versionminor}{2}
+\newcommand{\versionpatch}{0}
 \version{\versionmajor.\versionminor.\versionpatch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -41,8 +41,6 @@
 \coordinatorShort{A. Cavalli}
 \coordinatorEmail{andrea.cavalli@unibo.it}
 %
-\date{\today}
-%
 \contestsector{09/H1 -- Sistemi di Elaborazione delle Informazioni}
 %
 \scientificsector{ING-INF/05 -- Sistemi di Elaborazione delle Informazioni}
@@ -51,7 +49,9 @@
 %
 \examdate{June 16, 2022}
 %
-\examdateShort{2022/06/16}
+\examdateShort{2022-06-16}
+
+\makeinfo
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -70,19 +70,163 @@
 %%/////////
 
 %===============================================================================
-\section{Premises}
+\section{Candidate Presentation}
 %===============================================================================
 
-\begin{frame}{Lecture Goals}
-	\begin{itemize}
-		\item
-	\end{itemize}
+\begin{frame}{About Me}
+    \begin{itemize}
+        \item Bachelor in software engineering
+
+        \vfill
+        
+        \item Master in computer science and engineering
+
+        \vfill
+        
+        \item PhD in Data Science and Computation
+        %
+        \begin{itemize}
+            \item with a focus on foundational Artificial Intelligence
+        \end{itemize}
+
+        \vfill
+        
+        \item Currently:
+        %
+        \begin{itemize}
+            \item research fellow at \disiShort{} (\uniboShort{})
+            \item funded by the EXPECTATION project\footnote{\url{http://expectation.ehealth.hevs.ch}}
+            %
+            \begin{itemize}
+                \item where I am WP-leader
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Motivations}
-	\begin{itemize}
-		\item
-	\end{itemize}
+%===============================================================================
+\section{Context, Motivation, and Goals}
+%===============================================================================
+
+\begin{frame}{Context}
+    \begin{itemize}
+        \item Era of \alert{data-driven} artificial intelligence (AI)
+        %
+        \begin{itemize}
+            \item major availability of \alert{data} and \alert{computational resources}
+            \item pervasive exploitation in science and in the industry
+        \end{itemize}
+
+        \vfill
+
+        \item Deep entanglement among AI and \alert{data science} (DS)
+        %
+        \begin{itemize}
+            \item both leveraging \alert{machine learning} to mine information from data
+        \end{itemize}
+        
+        \vfill
+
+        \item AI involves not only data-driven approaches
+        %
+        \begin{itemize}
+            \item[eg] good old-fashioned AI (GOFAI), \alert{computational logic}\ccite{lloyd1990computational} (CL) 
+        \end{itemize}
+
+        \vfill
+        
+        \item Following a ``classical'' perspective, we distinguish among\ccite{explanation-aixia2020dp}
+        %
+        \begin{itemize}
+            \item \alert{symbolic} AI $\approx$ CL $\rightarrow$ emulating humans' \alert{rational reasoning}
+            \item \alert{\emph{sub}-symbolic} $\approx$ ML / DS  $\rightarrow$ emulating humans' \alert{intuition}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Motivation}
+    \begin{itemize}
+        \item \alert{Limitation} of sub-symbolic AI are now becoming relevant \alert{issues} 
+        %
+        \begin{itemize}
+            \item[eg] interpretability/\alert{explainability}\ccite{darpa2016-xai}, data-greediness\ccite{CropperDM20}, human-in-the-loop\ccite{Yao2018}
+        \end{itemize}
+        
+        \vfill
+
+        \item Symbolic and sub-symbolic have several \alert{complementarities}
+        %
+        \begin{itemize}
+            \item[$\rightarrow$] integrating the two may lead to a better AI\ccite{Hoehndorf2017, xailp-woa2019, lpaas-bdcc2}
+        \end{itemize}
+
+        \vfill
+
+        \item Long-standing interest in \alert{integrating} the two approaches (cf. \cite{IlkouK20})
+
+        \vfill
+
+        \item Interest in spotting (and overcoming) \alert{obstacles} preventing integration
+        %
+        \begin{itemize}
+            \item either at the theoretical or technological level
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Goals}
+
+    Quite \emph{foundational} goals:
+    %
+    \vfill
+    %
+    \begin{enumerate}
+        \item \alert{comparing} DS and CL w.r.t. how they manage \alert{knowledge}
+        %
+        \begin{itemize}
+            \item \alert{representation}
+            \item acquisition (a.k.a. \alert{learning})
+            \item inference (a.k.a. \alert{reasoning})
+            \item transferring (a.k.a. \alert{explanation})
+        \end{itemize}
+        
+        \vfill
+
+        \item \alert{elicit} synergies and complementarities, and frictions w.r.t. \alert{integration}
+
+        \vfill
+
+        \item assess the \alert{technological gap} among the two
+        %
+        \begin{itemize}
+            \item design \& \alert{prototype software} technologies for filling it
+        \end{itemize}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Organization of the Thesis}
+
+    Two major parts, concerning the integration of CL and DS:
+    %
+    \vfill
+    %
+    \begin{block}{\textbf{Computational} perspective: \textbf{what} aspects can be integreted}
+        \begin{enumerate}
+            \item understand the \alert{analogies} and \alert{differences} among CL and DS
+            \item derive a \alert{conceptual framework} bridging them
+        \end{enumerate}
+    \end{block}
+    %
+    \vfill
+    %
+    \begin{block}{\textbf{Technological} perspective: \textbf{how} to integrate them}
+        \begin{enumerate}\setcounter{enumi}{2}
+            \item evaluate the current \alert{state of the art} of AI \alert{technologies}
+            \item propose the notion of \alert{logic ecosystem} to support integration
+            \item discuss the \alert{reification} of logic ecosystems into \alert{software}
+        \end{enumerate}
+    \end{block}
+
 \end{frame}
 
 %===============================================================================
@@ -90,9 +234,9 @@
 %===============================================================================
 
 \begin{frame}{Basics}
-	\begin{itemize}
-		\item
-	\end{itemize}
+    \begin{itemize}
+        \item
+    \end{itemize}
 \end{frame}
 
 %===============================================================================
@@ -100,13 +244,13 @@
 %===============================================================================
 
 \begin{frame}{First Demo}
-	\begin{block}{Goal}
-		Goal here
-	\end{block}
-	%
-	\begin{itemize}
-		\item further info here
-	\end{itemize}
+    \begin{block}{Goal}
+        Goal here
+    \end{block}
+    %
+    \begin{itemize}
+        \item further info here
+    \end{itemize}
 \end{frame}
 
 %===============================================================================
@@ -114,13 +258,13 @@
 %===============================================================================
 
 \begin{frame}{First Exercise}
-	\begin{block}{Goal}
-		Goal here
-	\end{block}
-	%
-	\begin{itemize}
-		\item further info here
-	\end{itemize}
+    \begin{block}{Goal}
+        Goal here
+    \end{block}
+    %
+    \begin{itemize}
+        \item further info here
+    \end{itemize}
 \end{frame}
 
 %===============================================================================
@@ -138,14 +282,13 @@
 %%%%
 \setbeamertemplate{page number in head/foot}{}
 %/////////
-\begin{frame}[c,noframenumbering]{\refname}
-%\begin{frame}[t,allowframebreaks,noframenumbering]{\refname}
+% \begin{frame}[c,noframenumbering]{\refname}
+\begin{frame}[t,allowframebreaks,noframenumbering]{\refname}
 %	\tiny
-	\scriptsize
+    \scriptsize
 %	\footnotesize
-	\nocite{*}
-	\bibliographystyle{apalike-AMS}
-	\bibliography{phd-defense}
+    \bibliographystyle{plain}
+    \bibliography{phd-defense,my-papers}
 \end{frame}
 %/////////
 

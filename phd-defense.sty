@@ -43,8 +43,7 @@
 \newcommand{\examdate}[1]{\def\theexamdate{#1}}
 \newcommand{\examdateShort}[1]{\def\theexamdateShort{#1}}
 
-\let\oldtitlepage\titlepage
-\renewcommand{\titlepage}{
+\newcommand{\makeinfo}{
     \author[\sspeaker{\thecand}]{\color{black}
         \centering
         \begin{tabular}{rcl}
@@ -59,7 +58,6 @@
     }
     \institute[\theprogrammeShort{} \thecycle{} @ \theschoolShort]{\theprogramme{}, Cycle \thecycle \\ \theschool}
     \date[\theexamdateShort{} (v.\ \theversion)]{Defense date: \theexamdate\\\tiny Slides version: \theversion}
-    \oldtitlepage
 }
 
 \newcommand{\hint}[1]{\hfill{\scriptsize \alert{!} {\color{gray}#1}}}
