@@ -47,7 +47,7 @@
     \author[\sspeaker{\thecand}]{\color{black}
         \centering
         \begin{tabular}{rcl}
-            \textbf{Supervisor:} & \alert{\textbf{Candidate:}} & \textbf{Coordinator:}
+            \textbf{Supervisor} & \alert{\textbf{Candidate}} & \textbf{Coordinator}
             \\
             \thesupervisor~\href{mailto:\thesupervisorEmail}{\textsuperscript{\Letter}}
             &  
@@ -64,6 +64,30 @@
 \newcommand{\dhint}[1]{{\scriptsize{\color{gray}\dotfill #1}}}
 \newcommand{\fnhint}[1]{{\footnote{\scriptsize{\color{gray}#1}}}}
 \newcommand{\columsHH}[2]{\begin{columns}\begin{column}{.49\linewidth}#1\end{column}\hfill\begin{column}{.49\linewidth}#2\end{column}\end{columns}}
+
+\newcommand{\functor}[1]{\mathtt{#1}}
+\newcommand{\variable}[1]{\mathit{#1}}
+\newcommand{\predication}[1]{\text{\textit{#1}}}
+\newcommand{\consdot}{\functor{~.~}}
+\newcommand{\fullstop}{\mathtt{.}}
+
+\newcommand{\meta}[1]{\langle\mathit{#1}\rangle}
+\newcommand{\var}[1]{\variable{#1}}
+\newcommand{\const}[1]{\functor{#1}}
+\newcommand{\logicrule}[2]{#1 & \texttt{:-} & #2}
+
+\newcommand{\twopkt}{\textsc{\textsf{2}P-Kt}}
+\newcommand{\lime}{LIME}
+\newcommand{\xai}{XAI}
+\newcommand{\psyke}{PSyKE}
+\newcommand{\refann}{REFANN}
+\newcommand{\real}{REAL}
+\newcommand{\trepan}{TREPAN}
+\newcommand{\iter}{ITER}
+\newcommand{\gridex}{GridEx}
+\newcommand{\cart}{CART}
+\renewcommand{\smile}{Smile}
+\newcommand{\scikit}{Scikit-Learn}
 
 \AtBeginSection[]
 {

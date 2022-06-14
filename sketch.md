@@ -209,9 +209,9 @@ How is distilled information transferred to another (possibly human) agent?
 
 ### Current State of Technology
 
-- Small amount of mature technologies, many proof of concepts
+- Few mature technologies, many proof of concepts
 
-- Technological Silos
+- Technology silos
 
 - Prolog as the most prominent LBT
 
@@ -252,3 +252,5 @@ How is distilled information transferred to another (possibly human) agent?
 2. Graph neural networks
 
 3. Symbolic knowledge injection
+
+4. TEFI loop
