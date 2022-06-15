@@ -12,8 +12,8 @@
 \usepackage{phd-defense}
 % version
 \newcommand{\versionmajor}{1}
-\newcommand{\versionminor}{0}
-\newcommand{\versionpatch}{2}
+\newcommand{\versionminor}{1}
+\newcommand{\versionpatch}{0}
 \version{\versionmajor.\versionminor.\versionpatch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -360,32 +360,6 @@
     \end{block}
 \end{frame}
 
-\begin{frame}{What does `symbolic' actually mean?}
-    \begin{block}{\textbf{Symbolic} representations of knowledge should\cccite{Gelder90}}
-        \begin{itemize}
-            \item involve a \alert{set of symbols},
-            \item which can be combined in (possibly) \alert{infinitely many} ways, 
-            \item following precise \alert{syntactical} rules, and
-            \item where both elementary and combined symbols have \alert{meaning}
-            %
-            \begin{itemize}
-                \item[ie] \alert{each} symbol can be mapped into some entity from the domain at hand.
-            \end{itemize}
-        \end{itemize}
-    \end{block}
-
-    \begin{alertblock}{Opposite notion: \textit{distributed} representations (a.k.a. \textbf{sub-symbolic})}
-        \begin{itemize}
-            \item where symbols \alert{alone} have no meaning\ldots
-            \item \ldots unless it is considered along with its \alert{neighbourhood}
-            %
-            \begin{itemize}
-                \item[ie] any other symbol which is \alert{close} (according to some notion of closeness)
-            \end{itemize}
-        \end{itemize}
-    \end{alertblock}
-\end{frame}
-
 \subsection{Learning}
 
 \begin{frame}[allowframebreaks]{CL vs. DS -- Learning}
@@ -430,16 +404,6 @@
             \end{itemize}
         \end{itemize}
     \end{block}
-\end{frame}
-
-\begin{frame}{Inductive Logic Programming Example}
-    \prologimport{listings/ilp-example.pl}
-    %
-    \begin{exampleblock}{Here the goal is \textbf{inducing} the theory}
-        \begin{itemize}
-            \item \prolog{grand_parent(X, Y) :- parent(X, Z), parent(Z, Y).}
-        \end{itemize}
-    \end{exampleblock}
 \end{frame}
 
 \subsection{Inference}
@@ -702,38 +666,9 @@
     \end{multicols}
 \end{frame}
 
-\subsubsection{\twopkt{} for Knowledge Representation}
+% \subsubsection{\twopkt{} for Knowledge Representation}
 
-\begin{frame}{Knowledge Representation and Manipulation in \twopkt}
-    \begin{block}{Module \module{core}}
-        \begin{multicols}{2}
-            \begin{itemize}
-                \item logic terms and Horn clauses
-                \item logic substitutions
-            \end{itemize}
-        \end{multicols}
-    \end{block}
-
-    \begin{block}{Module \module{unify}}
-        \begin{itemize}
-            \item unification and MGU\ccite{MartelliMontanari1982}
-        \end{itemize}
-    \end{block}
-
-    \begin{block}{Module \module{theory}}
-        \begin{itemize}
-            \item logic theories / knowledge bases
-        \end{itemize}
-    \end{block}
-
-    \begin{block}{Module \module{oop-lib}}
-        \begin{itemize}
-            \item interoperability with OOP programming languages
-        \end{itemize}
-    \end{block}
-\end{frame}
-
-\subsubsection{\twopkt{} for Machine Learning}
+\subsubsection{\twopkt{} for Learning}
 
 \begin{frame}{Inductive Logic Programming support in \twopkt{}}
     \begin{itemize}
@@ -864,7 +799,7 @@
 
 \subsubsection{\twopkt{} for Explanations}
 
-\begin{frame}{Platform for SKE based on \twopkt{} (\psyke{}\ccite{psyke-woa2021})}
+\begin{frame}{Platform for SKE based on \twopkt{}\ccite{psyke-woa2021})}
     \begin{center}
         \includegraphics[width=.8\linewidth]{figures/Psyke.pdf}
     \end{center}
@@ -872,7 +807,7 @@
     \vfill
     %
     \begin{itemize}
-        \item general \alert{API} for \alert{SKE} out of ML models
+        \item \alert{\psyke{}}: general \alert{API} for \alert{SKE} out of ML models
         \vfill
         \item in the form of \alert{Prolog rules}
         \vfill
@@ -953,7 +888,7 @@
 %===============================================================================
 
 %/////////
-\frame{\titlepage}
+\frame[noframenumbering]{\titlepage}
 %/////////
 
 %===============================================================================
@@ -972,6 +907,75 @@
     \bibliography{phd-defense,my-papers}
 \end{frame}
 %/////////
+
+%===============================================================================
+\section*{Appendix}
+%===============================================================================
+
+\begin{frame}[noframenumbering]{What does `symbolic' actually mean?}
+    \begin{block}{\textbf{Symbolic} representations of knowledge should\cccite{Gelder90}}
+        \begin{itemize}
+            \item involve a \alert{set of symbols},
+            \item which can be combined in (possibly) \alert{infinitely many} ways, 
+            \item following precise \alert{syntactical} rules, and
+            \item where both elementary and combined symbols have \alert{meaning}
+            %
+            \begin{itemize}
+                \item[ie] \alert{each} symbol can be mapped into some entity from the domain at hand.
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+
+    \begin{alertblock}{Opposite notion: \textit{distributed} representations (a.k.a. \textbf{sub-symbolic})}
+        \begin{itemize}
+            \item where symbols \alert{alone} have no meaning\ldots
+            \item \ldots unless it is considered along with its \alert{neighbourhood}
+            %
+            \begin{itemize}
+                \item[ie] any other symbol which is \alert{close} (according to some notion of closeness)
+            \end{itemize}
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Inductive Logic Programming Example}
+    \prologimport{listings/ilp-example.pl}
+    %
+    \begin{exampleblock}{Here the goal is \textbf{inducing} the theory}
+        \begin{itemize}
+            \item \prolog{grand_parent(X, Y) :- parent(X, Z), parent(Z, Y).}
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Knowledge Representation and Manipulation in \twopkt}
+    \begin{block}{Module \module{core}}
+        \begin{multicols}{2}
+            \begin{itemize}
+                \item logic terms and Horn clauses
+                \item logic substitutions
+            \end{itemize}
+        \end{multicols}
+    \end{block}
+
+    \begin{block}{Module \module{unify}}
+        \begin{itemize}
+            \item unification and MGU\ccite{MartelliMontanari1982}
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Module \module{theory}}
+        \begin{itemize}
+            \item logic theories / knowledge bases
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{Module \module{oop-lib}}
+        \begin{itemize}
+            \item interoperability with OOP programming languages
+        \end{itemize}
+    \end{block}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
