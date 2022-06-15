@@ -13,7 +13,7 @@
 % version
 \newcommand{\versionmajor}{1}
 \newcommand{\versionminor}{0}
-\newcommand{\versionpatch}{1}
+\newcommand{\versionpatch}{2}
 \version{\versionmajor.\versionminor.\versionpatch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -333,7 +333,7 @@
 \subsection{Representation}
 
 \begin{frame}[allowframebreaks]{CL vs. DS -- Representation}
-    \begin{block}{DS leverages on sub-symbolic representations}
+    \begin{block}{DS leverages on \textbf{sub-symbolic} representations}
         \begin{itemize}
             \item $\begin{cases}
                 \alert{\text{data}} \rightarrow \text{numeric datasets of \alert{fixed} size}
@@ -345,7 +345,7 @@
         \end{itemize}
     \end{block}
 
-    \begin{block}{CL leverages on the language of logic}
+    \begin{block}{CL leverages on \textbf{symbolic} formulae}
         \begin{itemize}
             \item several \alert{logic formalisms} available
             \begin{itemize}
@@ -499,25 +499,25 @@
     \end{alertblock}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{An Abstract Framework for XAI\ccite{agentbasedxai-extraamas2020}}
+\begin{frame}%[allowframebreaks]
+    \frametitle{An Abstract Framework for XAI\ccite{agentbasedxai-extraamas2020}}
 
     \begin{center}
         \includegraphics[width=.5\linewidth]{figures/framework.pdf}
     \end{center}
     %
-    \begin{itemize}
-        \item[$X$] object to be explained
-        \item[$A$] observer agent
-        \item[$I_A(\cdot)$] a function ``measuring'' the ``degree of interpretability'' of $X$, w.r.t. $A$
-        \item[$E(\cdot)$] an \alert{explanation} function, mapping objects into (different) objects      
-        \item[$X'$] the \alert{result} of the explanation, i.e. a \alert{more-interpretable} object
-    \end{itemize}
+    % \begin{itemize}
+    %     \item[$X$] object to be explained
+    %     \item[$A$] observer agent
+    %     \item[$I_A(\cdot)$] a function ``measuring'' the ``degree of interpretability'' of $X$, w.r.t. $A$
+    %     \item[$E(\cdot)$] an \alert{explanation} function, mapping objects into (different) objects      
+    %     \item[$X'$] the \alert{result} of the explanation, i.e. a \alert{more-interpretable} object
+    % \end{itemize}
     
     \begin{block}{Key points}
         \begin{itemize}
             \item interpretation is \alert{subjective}
-            \item `interpretability' does not need to be measurable
-            \item explanation $\approx$ search of a \alert{surrogate} interpretable model
+            \item explanation $\approx$ search of a \alert{more interpretable} model
         \end{itemize}
     \end{block}
 \end{frame}
@@ -834,7 +834,7 @@
         %
         \begin{itemize}
             \item LPAD\ccite{VennekensVB04} programs \alert{converted} into Prolog
-            \item ordinary Prolog solver exploited behind the scenes
+            \item extended Prolog solver exploited behind the scenes
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -864,7 +864,7 @@
 
 \subsubsection{\twopkt{} for Explanations}
 
-\begin{frame}{Platform for SKE based on \twopkt{}\ccite{psyke-woa2021}}
+\begin{frame}{Platform for SKE based on \twopkt{} (\psyke{}\ccite{psyke-woa2021})}
     \begin{center}
         \includegraphics[width=.8\linewidth]{figures/Psyke.pdf}
     \end{center}
