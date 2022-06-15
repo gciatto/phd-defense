@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ISE Lab -- Topic
+% PhD Thesis Defense
 % Giovanni Ciatto
 % Alma Mater Studiorum - Università di Bologna
 % mailto:giovanni.ciatto@unibo.it
@@ -11,9 +11,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{phd-defense}
 % version
-\newcommand{\versionmajor}{0}
-\newcommand{\versionminor}{4}
-\newcommand{\versionpatch}{0}
+\newcommand{\versionmajor}{1}
+\newcommand{\versionminor}{0}
+\newcommand{\versionpatch}{1}
 \version{\versionmajor.\versionminor.\versionpatch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -73,7 +73,7 @@
 \section{Candidate Presentation}
 %===============================================================================
 
-\begin{frame}{About Me}
+\begin{frame}{About Me \hfill \uurl{https://about.me/gciatto}}
     \begin{itemize}
         \item Bachelor in \alert{Software Engineering} (2011--2014)
 
@@ -258,11 +258,11 @@
         \item Pros/cons:
         %
         \begin{itemize}
-            \item[$+$] data-driven $\rightarrow$ bottom-up $\rightarrow$ adherence to reality
-            \item[$+$] scalable algorithms for learning
-            \item[$\sim$] flexibility w.r.t. errors in the data or in the model
-            \item[$-$] reliance on poorly interpretable models
-            \item[$-$] simple, stimulus--response form of inference
+            \item[$+$] data-driven $\rightarrow$ \alert{bottom-up} $\rightarrow$ adherence to reality
+            \item[$+$] \alert{scalable} algorithms for learning
+            \item[$\sim$] \alert{flexibility} w.r.t. errors in the data or in the model
+            \item[$-$] reliance on \alert{poorly interpretable} models
+            \item[$-$] simple, \alert{stimulus--response} form of inference
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -271,14 +271,18 @@
 
 \begin{frame}{Computational Logic\ccite{lloyd1990computational}}
     \begin{itemize}
-        \item Well-established discipline laying at the intersection among CS, logic, and mathematics
+        \item Well-established discipline laying at the intersection among\ldots
+        %
+        \begin{itemize}
+            \item[] \ldots Computer Science, Logic, and Mathematics
+        \end{itemize} 
         
         \vfill 
         
-        \item Focus on using formal logics as a means for computing
+        \item Focus on using \alert{formal logics} as means for \alert{computing}
         %
         \begin{itemize}
-            \item hence, on making software systems able to reason, rationally
+            \item hence, on making software systems able to \alert{reason}, automatically
         \end{itemize}
         
         \vfill
@@ -286,11 +290,11 @@
         \item Pros/cons:
         %
         \begin{itemize}
-            \item[$+$] powerful, ``rational'' form of inference
-            \item[$+$] reliance on machine- and human-interpretable representations
-            \item[$\sim$] crisp and exact representations and decisions
-            \item[$-$] reliance on poorly scalable, often untractable, or undecidable algorithms
-            \item[$-$] top-down approach to knowledge, possibly detached from reality
+            \item[$+$] powerful, ``\alert{rational}'' form of inference
+            \item[$+$] reliance on machine- and human-\alert{interpretable} representations
+            \item[$\sim$] \alert{crisp} and \alert{exact} representations and decisions
+            \item[$-$] reliance on poorly scalable, \alert{often untractable}, or undecidable algorithms
+            \item[$-$] \alert{top-down} approach to knowledge, possibly detached from reality
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -305,7 +309,7 @@
     \vfill
     %
     \begin{description}
-        \item[Representation:] how are data and knowledge expressed
+        \item[Representation:] how are data and knowledge \alert{expressed}
         %
         \begin{itemize}
             \item[\ldots] and made available to computers / humans
@@ -313,15 +317,15 @@
         
         \vfill
 
-        \item[Learning:] how is novel re-usable knowledge distillied from data
+        \item[Learning:] how is novel re-usable knowledge \alert{distilled} from data
         
         \vfill
 
-        \item[Inference:] how are predictions drawn from prior knowledge
+        \item[Inference:] how are predictions \alert{drawn} from prior knowledge
         
         \vfill
 
-        \item[Explanation:] how is information transferred to another (possibly human) agent
+        \item[Explanation:] how is information \alert{transferred} to another (human?) agent
 
     \end{description}
 \end{frame}
@@ -348,10 +352,10 @@
                 \item \alert{expressivity--tractability} trade-off\ccite{LevesqueB87}
                 \item good trade-off\ccite{Makowsky1987} provided by \alert{Horn clauses}\ccite{Horn1951}
             \end{itemize}
-            \item coherent representation of both data and knowledge via relations
-            \item both human- and machine-interpretable
-            \item support for intensional representations
-            \item support for recursive / structured information
+            \item coherent representation of \alert{both} data and knowledge via relations
+            \item both human- and machine-\alert{interpretable}
+            \item support for \alert{intensional} representations
+            \item support for \alert{recursive} / structured information
             \end{itemize}
     \end{block}
 \end{frame}
@@ -387,47 +391,55 @@
 \begin{frame}[allowframebreaks]{CL vs. DS -- Learning}
     \begin{block}{Similar formulation}
         \begin{itemize}
-            \item search the best hypothesis in an hypothesis space
-            \item human-in-the-loop required to chose the hypothesis space
-            \item automatic procedures for exploring the hypothesis space
-            \item learning as non-deterministic (possibly stochastic) process
+            \item \alert{search} the best hypothesis in the \alert{hypothesis space} ($\mathcal{H}$)
+            \item \alert{human-in-the-loop} required to choose the $\mathcal{H}$
+            \item automatic procedures for \alert{exploring} the $\mathcal{H}$
+            \item learning as \alert{non-deterministic} (possibly stochastic) process
         \end{itemize}
     \end{block}
 
     \begin{block}{Different implementations}
         \begin{itemize}
-            \item DS $\rightarrow$ numeric data $\rightarrow$ differentiable hypothesis space
+            \item DS $\rightarrow$ numeric data $\rightarrow$ $\mathcal{H}$ is \alert{differentiable}
             %
             \begin{itemize}
-                \item search by gradient descent
-                \item fuzzy constraints, fuzzy outcomes
-                \item support for hardware acceleration via TPU
+                \item search by \alert{gradient descent}
+                \item \alert{fuzzy} constraints, fuzzy outcomes
+                \item support for \alert{hardware acceleration} via TPU
             \end{itemize}
 
-            \item CL $\rightarrow$ symbolic knowledge bases $\rightarrow$ discrete search space
+            \bigskip
+
+            \item CL $\rightarrow$ symbolic knowledge bases $\rightarrow$ $\mathcal{H}$ is \alert{discrete}
             %
             \begin{itemize}
-                \item search by inductive logic programming\ccite{CropperD2020}
-                \item crisp constraints, consistent outcomes
-                \item virtual support for concurrency (unexplored)
+                \item search by \alert{inductive logic programming}\ccite{CropperD2020}
+                \item \alert{crisp} constraints, consistent outcomes
+                \item \emph{virtual} support for \alert{concurrency} \hint{unexplored}
             \end{itemize}
         \end{itemize}
     \end{block}
 
     \begin{block}{Different expectations}
         \begin{itemize}
-            \item DS learns numeric functions
-            \item CL learns symbolic relations
+            \item DS learns numeric \alert{functions}
+            \item CL learns symbolic \alert{relations}, in the form of \alert{logic programs}
             %
             \begin{itemize}
-                \item[aka] logic programs 
-                %
-                \begin{itemize}
-                    \item possibly recursive, intelligible, and expressive
-                \end{itemize}
+                \item possibly \alert{recursive}, \alert{intelligible}, and expressive
             \end{itemize}
         \end{itemize}
     \end{block}
+\end{frame}
+
+\begin{frame}{Inductive Logic Programming Example}
+    \prologimport{listings/ilp-example.pl}
+    %
+    \begin{exampleblock}{Here the goal is \textbf{inducing} the theory}
+        \begin{itemize}
+            \item \prolog{grand_parent(X, Y) :- parent(X, Z), parent(Z, Y).}
+        \end{itemize}
+    \end{exampleblock}
 \end{frame}
 
 \subsection{Inference}
@@ -453,12 +465,16 @@
                 \item abductive, e.g. IFF\ccite{FungK97}
                 \item probabilistic, e.g. LPAD\ccite{VennekensVB04} 
             \end{itemize}
-            \item reasoners as expert oracles 
+            \item reasoners as expert \alert{oracles} to be queried 
             %
             % \begin{itemize}
             %     \item users may either observe the result or the reasoning process
             % \end{itemize}
-            \item reasoning requires computational time/space
+            \item reasoning may involve \alert{Turing-complete} computations
+            %
+            \begin{itemize}
+                \item[$\implies$] requires computational \alert{time/space}
+            \end{itemize}
         \end{itemize}
     \end{block}
 \end{frame}
@@ -470,21 +486,20 @@
 
     \begin{block}{The \textbf{opacity} problem in ML}
         \begin{itemize}
-            \item due to sub-symbolic models being black boxes\ccite{Lipton18}
-            \item need to \alert{explain} how they work $\rightarrow$ XAI\ccite{darpa2016-xai}
-            \item models as black-box functions
+            \item due to sub-symbolic models being \alert{black boxes}\ccite{Lipton18}
+            \item need to \alert{explain} how they work $\rightarrow$ \alert{eXplanable AI} (XAI)\ccite{darpa2016-xai}
         \end{itemize}
     \end{block}
 
-    \begin{alertblock}{Symbolic systems are inherently interpretable}
+    \begin{alertblock}{\textbf{Symbolic} systems are inherently \textbf{interpretable}}
         \begin{itemize}
-            \item as symbols are meant to carry meaning for users
-            \item insight: convert sub-symbolic models into symbolic ones
+            \item as \alert{symbols} are meant to \alert{carry meaning} for users
+            \item insight: \alert{convert} sub-symbolic models into symbolic ones
         \end{itemize}
     \end{alertblock}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{An abstract framework for XAI\ccite{agentbasedxai-extraamas2020}}
+\begin{frame}[allowframebreaks]{An Abstract Framework for XAI\ccite{agentbasedxai-extraamas2020}}
 
     \begin{center}
         \includegraphics[width=.5\linewidth]{figures/framework.pdf}
@@ -530,9 +545,9 @@
     %
     \begin{columns}
         \begin{column}{.43\linewidth}
-            \includegraphics[width=\linewidth]{figures/nn-iris.png}
+            \fbox{\includegraphics[width=\linewidth]{figures/nn-iris.png}}
         \end{column}
-        $\rightarrow$
+        %
         \begin{column}{.53\linewidth}\small
             \[ 
                 \begin{array}{l}
@@ -567,15 +582,19 @@
 
 \begin{frame}{Overview}
     \begin{enumerate}
-        \item Survey the state of the art of AI technologies
+        \item \alert{Survey} the state of the art of AI \alert{technologies}
         
         \vfill
 
-        \item Design and implement the notion of logic ecosystem 
+        \item Design and protype the notion of \alert{logic ecosystem}
         
         \vfill
 
-        \item Extend the ecosystem to support hybrid inference, learning, and explanation
+        \item \alert{Extend} the ecosystem towards \alert{hybrid} inference, learning, explanation
+        %
+        \begin{itemize}
+            \item hybrid $\approx$ symbolic + sub-symbolic
+        \end{itemize}
     \end{enumerate}
 \end{frame}
 
@@ -584,7 +603,7 @@
 \begin{frame}{Current state of technology}
     \begin{itemize}
 
-        \item Authored many surveys concerning logic-based technologies (LBT)
+        \item Authored many \alert{surveys} concerning \alert{logic-based technologies} (LBT)
         %
         \begin{itemize}
             \item[eg] \ccite{xaisurvey-ia14,lptech4mas-jaamas35,coordination-jlamp2020,logictech-information11}
@@ -592,27 +611,27 @@
         
         \vfill
 
-        \item Few mature technologies, many proof of concepts
+        \item \alert{Few} mature technologies, \alert{many} proof of concepts
         
         \vfill
 
-        \item Plenty of technology silos
+        \item Plenty of technology \alert{silos}
         %
         \begin{itemize}
-            \item well-engineered, optimised, and purpose-specific technologies\ldots
-            \item \dots yet poorly interoperable and portable
+            \item well-engineered, optimised, and \alert{purpose-specific} technologies\ldots
+            \item \dots yet \alert{poorly interoperable} and portable
         \end{itemize}
         
         \vfill
 
-        \item Prolog\ccite{Korner2020HistoryFuturePrologTPLP} as the most prominent LBT
+        \item \alert{Prolog}\ccite{Korner2020HistoryFuturePrologTPLP} as the most prominent LBT
         
         \vfill
 
         \item Conversely, DS-oriented technologies are flourishing
         %
         \begin{itemize}
-            \item an ecosystem of interoperable and portable technologies is emerging
+            \item an \alert{ecosystem} of interoperable and portable technologies is \alert{emerging}
             %
             \begin{itemize}
                 \item[eg] \scikit{}, Tensorflow, Pandas, Matplotlib, etc.
@@ -623,31 +642,31 @@
 
 \begin{frame}{Need for a Logic Ecosystem}
     \begin{itemize}
-        \item Set of loosely coupled software tools
+        \item Set of loosely coupled \alert{software} tools
         %
         \begin{itemize}
-            \item supporting individual aspects of CL
-            \item and their hybridisation with DS
+            \item supporting individual aspects of CL\ldots
+            \item \ldots and their hybridisation with DS
         \end{itemize}
 
         \vfill
 
-        \item usable as either a library or a CLI/GUI tool
+        \item usable as either a \alert{library} or a CLI/GUI tool
         
         \vfill
 
-        \item interoperable with as many software tools as possible
+        \item \alert{interoperable} with as many software \alert{tools/languages} as possible
         
         \vfill
 
-        \item portable on as many software platforms/runtimes as possible
+        \item \alert{portable} on as many software \alert{platforms/runtimes} as possible
         
         \vfill
 
-        \item to be incrementally extended by the CL or DS communities
+        \item to be \alert{incrementally extended} by the CL or DS communities
         %
         \begin{itemize}
-            \item recalling the intricacies of research-oriented software development
+            \item recalling the intricacies of \alert{research-oriented} software development
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -716,23 +735,13 @@
 
 \subsubsection{\twopkt{} for Machine Learning}
 
-\begin{frame}{Inductive Logic Programming Example}
-    \prologimport{listings/ilp-example.pl}
-    %
-    \begin{exampleblock}{Here the goal is \textbf{inducing} the theory}
-        \begin{itemize}
-            \item \prolog{grand_parent(X, Y) :- parent(X, Z), parent(Z, Y).}
-        \end{itemize}
-    \end{exampleblock}
-\end{frame}
-
-\begin{frame}{Inductive Logic Programming Support in \twopkt{}}
+\begin{frame}{Inductive Logic Programming support in \twopkt{}}
     \begin{itemize}
-        \item Sketched in recent Master theses\ccite{Speciale2021,Nannini2021}
+        \item Sketched in recent \alert{Master theses}\ccite{Speciale2021,Nannini2021}
         
         \vfill
 
-        \item Focus on the meta-interpretative learning approach\ccite{MuggletonLT15}
+        \item Focus on the \alert{meta-interpretative learning} approach\ccite{MuggletonLT15}
         %
         \begin{itemize}
             \item new ILP algorithm inspired by Metagol
@@ -740,20 +749,20 @@
 
         \vfill
 
-        \item Promising results w.r.t. learning recursive logic programs
+        \item Promising results w.r.t. learning \alert{recursive} logic programs
     \end{itemize}
 \end{frame}
 
-\begin{frame}{\twopkt{}'s interoperability with ML\ccite{CiattoCC2022}}
+\begin{frame}{\twopkt{}'s Interoperability with ML\ccite{CiattoCC2022}}
     \begin{columns}
         \begin{column}{.35\linewidth}
             \includegraphics[width=\linewidth]{figures/layers.pdf}
         \end{column}
         \begin{column}{.65\linewidth}
             \begin{itemize}
-                \item library of LP predicates
-                \item for training/using ML models
-                \item supports hybrid systems
+                \item \alert{Library} of LP predicates\ldots
+                \item \ldots for \alert{training/using} ML models
+                \item Supports hybrid systems via \alert{ML + LP}
             \end{itemize}
         \end{column}
     \end{columns}
@@ -777,11 +786,11 @@
     \vfill
 
     \begin{itemize}
-        \item Logic solvers as oracles queried by users
+        \item Logic solvers as \alert{oracles} queried by users
         
         \vfill
 
-        \item Generators as gateways towards the external world
+        \item Generators as \alert{gateways} towards the external world
     \end{itemize}
 \end{frame}
 
@@ -815,26 +824,33 @@
 
     %
     \begin{itemize}\small
-        \item Probabilistic solvers are queried with a \alert{goal}
+        \item Implementation of \alert{ProbLog}\ccite{de-raedt-2007}, based on \twopkt{}
+        %
+        \begin{itemize}
+            \item supporting \alert{probabilistic}, fuzzy reasoning
+        \end{itemize}
         \vfill
-        \item They respond with \alert{variables assignments} and their \alert{probabilities}
-        \vfill
-        \item An \alert{internal solver} may be exploited behind the scenes to compute solutions
+        \item Several tricks:
+        %
+        \begin{itemize}
+            \item LPAD\ccite{VennekensVB04} programs \alert{converted} into Prolog
+            \item ordinary Prolog solver exploited behind the scenes
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}{\twopkt{}'s support for Concurrent LP}
     \begin{itemize}
 
-        \item Sketched in recent Master theses\ccite{Giordano2021}
+        \item Sketched in recent Master thesis\ccite{Giordano2021}
 
         \vfill
 
-        \item Support for OR-concurrent LP
+        \item Support for \alert{OR-concurrent} LP
         
         \vfill
 
-        \item Based on modern concurrent programming facilities 
+        \item Based on \emph{modern} \alert{concurrent programming} facilities 
         %
         \begin{itemize}
             \item[eg] coroutines and fork-join pools
@@ -842,7 +858,7 @@
 
         \vfill
 
-        \item Immutable \& copy-on-edit design to avoid synchronization overhead
+        \item Immutable \& \alert{copy-on-edit} design to avoid synchronization overhead
     \end{itemize}
 \end{frame}
 
@@ -856,11 +872,15 @@
     \vfill
     %
     \begin{itemize}
-        \item general API for extracting symbolic knowledge out of ML models
+        \item general \alert{API} for \alert{SKE} out of ML models
         \vfill
-        \item in the form of Prolog rules
+        \item in the form of \alert{Prolog rules}
         \vfill
-        \item via several extraction algorithms
+        \item via several extraction algorithms from the literature
+        %
+        \begin{itemize}
+            \item plus some proposed by us\ccite{gridex-extraamas2021}
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
@@ -868,14 +888,64 @@
 \section{Conclusions and Future Works}
 %===============================================================================
 
-\begin{frame}{First Exercise}
-    \begin{block}{Goal}
-        Goal here
+\begin{frame}{Summary of Contributions}
+    \begin{block}{Computational perspective (what)}
+        \begin{itemize}
+            \item orthogonal approaches to knowledge representation
+            \item analogous approaches to learning
+            \item intuitive vs. rational approaches to inference
+            \item logic as a means for explaining ML
+        \end{itemize}
     \end{block}
-    %
-    \begin{itemize}
-        \item further info here
-    \end{itemize}
+    
+    \begin{block}{Technological perspective (how)}
+        \begin{itemize}
+            \item lack of interoperable \& portable LBT 
+            \item design and prototype the \twopkt{} ecosystem
+            \item extend the ecosystem towards sub-symbolic AI, by supporting:
+            %
+            \begin{itemize}
+                \item \alert{learning} via ILP and logic API for ML
+                \item \alert{inference} via probabilistic and concurrent LP
+                \item \alert{explanation} via \psyke{} 
+            \end{itemize}
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\subsection{Future Works}
+
+\begin{frame}{GNN as the Bridge among CL and ML\ccite{gnn-woa2021}}
+    \centering
+
+    \includegraphics[width=\linewidth]{figures/workflow.pdf}
+\end{frame}
+
+\begin{frame}{Symbolic Knowledge Injection\ccite{PsykiExtraamas2022, KinsCilc2022}}
+    \centering
+
+    \begin{figure}
+        \begin{subfigure}{0.45\linewidth}\centering
+            \fbox{\includegraphics[width=\linewidth]{figures/SKI-loss.pdf}}
+            Constraining
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.45\linewidth}\centering
+            \fbox{\includegraphics[width=\linewidth]{figures/SKI-structuring.pdf}}
+            Structuring
+        \end{subfigure}
+        
+        \bigskip
+        
+        \begin{subfigure}{0.45\linewidth}\centering
+            \fbox{\includegraphics[width=\linewidth]{figures/SKI-embedding.pdf}}
+            Embedding
+        \end{subfigure}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Train-Extract-Fix-Inject (TEFI) Loop}
+    \includegraphics[width=\linewidth]{figures/train-extract-fix-inject.pdf}
 \end{frame}
 
 %===============================================================================
